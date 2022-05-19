@@ -14,7 +14,7 @@
 ## 🦝 필요기술
 - Android Studio
 - Kotlin
-- FireBase
+- FireBase 
 
 
 ## 🦝 진행도
