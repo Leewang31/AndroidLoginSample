@@ -1,7 +1,7 @@
 
 ---
 
-## 🦝인프런 / <a href="https://github.com/wnghdtjr129">[초급편]안드로이드 커뮤니티앱 만들기 (예제 앱 만들기)</a>🦝
+## 🦝 인프런 / <a href="https://github.com/wnghdtjr129">[초급편]안드로이드 커뮤니티앱 만들기 (예제 앱 만들기)</a>🦝
 
 | Step | 수강 | 내용 |
 |:--:|:--:|:--:|
@@ -11,13 +11,13 @@
 | Step.4 |  | 데이터베이스에서 데이터 받아오기 |
 
 
-## 필요기술
+## 🦝 필요기술
 - Android Studio
 - Kotlin
 - FireBase
 
 
-## 진행도
+## 🦝 진행도
 <table>
   <tr>
     <td align="center">
