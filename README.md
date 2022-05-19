@@ -26,7 +26,7 @@
             <br />
             <sub><b>KiWang</b>
             <br>
-            <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0" />
+            <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/25" />
             </sub>
         </a>
         <br/>
