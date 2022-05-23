@@ -6,9 +6,9 @@
 | Step | 수강 | 내용 |
 |:--:|:--:|:--:|
 | Step.1 | ☑ | 레이아웃, 파이어베이스 설정, 회원 가입 |
-| Step.2 |  | 데이터 바인딩, 로그인, 로그아웃 |
-| Step.3 |  | 데이터베이스에 데이터 삽입 |
-| Step.4 |  | 데이터베이스에서 데이터 받아오기 |
+| Step.2 | ☑ | 데이터 바인딩, 로그인, 로그아웃 |
+| Step.3 | ☑ | 데이터베이스에 데이터 삽입 |
+| Step.4 | ☑ | 데이터베이스에서 데이터 받아오기 |
 
 
 ## 🦝 필요기술
@@ -26,7 +26,7 @@
             <br />
             <sub><b>KiWang</b>
             <br>
-            <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/25" />
+            <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100" />
             </sub>
         </a>
         <br/>

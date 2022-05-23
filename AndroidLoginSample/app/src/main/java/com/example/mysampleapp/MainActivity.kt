@@ -1,9 +1,15 @@
 package com.example.mysampleapp
 
+import android.app.Activity
+import android.content.Intent
+import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.mysampleapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -11,6 +17,8 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -20,18 +28,53 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         val joinBtnClicked = findViewById<Button>(R.id.joinBtn)
-        joinBtnClicked.setOnClickListener{
-            auth.createUserWithEmailAndPassword("abs@abc.anc", "12341234")
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this,"ok",Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this,"no",Toast.LENGTH_SHORT).show()
+        joinBtnClicked.setOnClickListener {
 
+
+            val email = binding.emailArea
+            val pwd = binding.pwdArea
+
+            auth.createUserWithEmailAndPassword(email.text.toString(), pwd.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+
+                    } else {
+                        Toast.makeText(this, "no", Toast.LENGTH_SHORT).show()
+
+                    }
                 }
-            }
 
+        }
+        binding.logoutBtn.setOnClickListener {
+            auth.signOut()
+            Toast.makeText(this, auth.currentUser?.uid.toString(), Toast.LENGTH_SHORT).show()
+        }
+        binding.loginBtn.setOnClickListener{
+            val email = binding.emailArea
+            val pwd = binding.pwdArea
+
+            auth.signInWithEmailAndPassword(
+                email.text.toString(),
+                pwd.text.toString()
+            )
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, auth.currentUser?.uid.toString(), Toast.LENGTH_SHORT).show()
+
+                        val intent  = Intent(this, BoardListActivity::class.java)
+                        startActivity(intent)
+
+                    } else {
+                        Toast.makeText(this, "no", Toast.LENGTH_SHORT).show()
+
+                    }
+                }
         }
     }
 }
